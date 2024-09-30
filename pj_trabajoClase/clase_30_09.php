@@ -1,8 +1,11 @@
 <?php
-$nombre="Andrés";
-$apellido="Egido";
-
-echo "Mi nombre es:".$nombre." ".$apellido;
-echo "<br>";
-echo "Mi nombre es $nombre $apellido";
+$mi_primera_variable = "Hola mundo desde una variable";
+$saludo="Hola mundo";
+$nombre="María";
+$edad=40;
+$verdadero=true;
+echo $mi_primera_variable;
+echo '<h1>'.$saludo.' '.$nombre.'</h1>';
+$nombre="Samuel";
+echo '<h2>'.$saludo.' '.$nombre.'</h2>';
 ?>
