@@ -18,9 +18,27 @@
 </head>
 <title>Document</title>
 </head>
+
 <body>
-    <header class="d-flex justify-content-center">
+    <header class="d-flex justify-content-center bg-info">
         <h1 class="titulo">Andrés Manuel Egido Fernández</h1>
     </header>
+    <div class="p-4">
+        <ul class="nav nav-pills d-flex justify-content-between">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.php">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="proyectos.php">Proyectos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contacto.php">Contacto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="sobreMi.php">Sobre Mi</a>
+            </li>
+        </ul>
+    </div>
 </body>
+
 </html>
