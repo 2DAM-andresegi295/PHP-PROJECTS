@@ -8,4 +8,7 @@ echo $mi_primera_variable;
 echo '<h1>'.$saludo.' '.$nombre.'</h1>';
 $nombre="Samuel";
 echo '<h2>'.$saludo.' '.$nombre.'</h2>';
+
+
+echo $_SERVER['SERVER_ADDR'];
 ?>
