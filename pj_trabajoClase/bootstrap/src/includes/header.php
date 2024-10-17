@@ -26,7 +26,7 @@
     <div class="p-4">
         <ul class="nav nav-pills d-flex justify-content-between">
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.php">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="proyectos.php">Proyectos</a>
