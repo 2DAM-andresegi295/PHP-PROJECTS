@@ -1,3 +1,6 @@
+<?php
+    $clase="header";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,15 +29,15 @@
     <div class="p-4">
         <ul class="nav nav-pills d-flex justify-content-between">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+                <a class="nav-link <?= $clase == "inicio" ? "active" : " "?>" aria-current="page" href="index.php">Inicio</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <?= $clase == "proyectos" ? "active" : " "?>" >
                 <a class="nav-link" href="proyectos.php">Proyectos</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <?= $clase == "contacto" ? "active" : " "?>">
                 <a class="nav-link" href="contacto.php">Contacto</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <?= $clase == "sobreMi" ? "active" : " "?>">
                 <a class="nav-link" href="sobreMi.php">Sobre Mi</a>
             </li>
         </ul>
