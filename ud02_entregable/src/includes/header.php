@@ -1,6 +1,3 @@
-<?php
-    $clase="header";
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,19 +16,18 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
 </head>
-<title>Document</title>
-</head>
 
 <body>
     <header class="d-flex justify-content-center bg-info">
-        <h1 class="titulo">Andrés Manuel Egido Fernández</h1>
+        <h1 class="titulo"><img src="../src/img/logo-mm.png">Gestión de alumnos</h1>
     </header>
     <div class="p-4">
-        <ul class="nav nav-pills d-flex justify-content-between">
+        <ul class="nav nav-pills d-flex justify-content-center">
             <li class="nav-item">
-                <a class="nav-link <?= $clase == "inicio" ? "active" : " "?>" aria-current="page" href="index.php">Inicio</a>
+                <a class="nav-link <?= $clase == "inicio" ? "active" : " " ?>" aria-current="page"
+                    href="index.php">Inicio</a>
             </li>
-            <li class="nav-item <?= $clase == "login" ? "active" : " "?>" >
+            <li class="nav-item <?= $clase == "login" ? "active" : " " ?>">
                 <a class="nav-link" href="profesores.php">Profesores</a>
             </li>
         </ul>

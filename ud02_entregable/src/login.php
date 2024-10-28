@@ -43,6 +43,7 @@
     if($_SERVER["REQUEST_METHOD"]=="POST"){
         $_SESSION['correo']=$_POST['correo'];
         $_SESSION['contraseña']=$_POST['contrasena'];
+        
     if($_SESSION['correo']== '1234'&& $_SESSION['contraseña']== '1234'){
         header("Location: index.php");
     }else{echo 'Credenciales incorrectas';}
