@@ -19,21 +19,21 @@
     
 </body>
 </html>
-<div class="d-flex justify-content-center pt-5">
-    <div class="card text-center">
-    <div class="card-header justify-content-center">
-        <ul class="nav nav-tabs card-header-tabs">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="true" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-        </ul>
-    </div>
+<div>
+<div class="card text-center">
+  <div class="card-header justify-content-center">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="true" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+  </div>
 </div>
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
