@@ -1,9 +1,5 @@
-<?php
-    $clase="header";
-?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,23 +15,29 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
 </head>
-<title>Document</title>
-</head>
-
 <body>
-    <header class="d-flex justify-content-center bg-info">
-        <h1 class="titulo">Andrés Manuel Egido Fernández</h1>
-    </header>
-    <div class="p-4">
-        <ul class="nav nav-pills d-flex justify-content-between">
-            <li class="nav-item">
-                <a class="nav-link <?= $clase == "inicio" ? "active" : " "?>" aria-current="page" href="index.php">Inicio</a>
-            </li>
-            <li class="nav-item <?= $clase == "login" ? "active" : " "?>" >
-                <a class="nav-link" href="profesores.php">Profesores</a>
-            </li>
+    
+</body>
+</html>
+<div class="d-flex justify-content-center pt-5">
+    <div class="card text-center">
+    <div class="card-header justify-content-center">
+        <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="true" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
         </ul>
     </div>
-</body>
-
-</html>
+</div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
