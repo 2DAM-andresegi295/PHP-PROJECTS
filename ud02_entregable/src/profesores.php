@@ -1,6 +1,7 @@
 <?php
+    $clase="profesores";
     session_start();
-    $clase="index";
+    
     require 'includes/header.php';
     if($_SESSION['correo']== '1234'&& $_SESSION['contraseña']== '1234')
     {

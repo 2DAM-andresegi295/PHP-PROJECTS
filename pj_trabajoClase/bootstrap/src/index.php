@@ -54,6 +54,18 @@ foreach ($agenda as $clave => $valor) {
         }
         ?>
     </div>
+    <div>
+        <?php
+            $archivo=fopen("./img/datos.txt", "a");
+            if($archivo){
+                $bytes = fputs($archivo, "Hola PHP");
+                echo "Bytes escritos: $bytes";
+                fclose($archivo);
+            }else{
+                echo "No se pudo abrir el archivo";
+            }
+        ?>
+    </div>
 </div>
 </body>
 
