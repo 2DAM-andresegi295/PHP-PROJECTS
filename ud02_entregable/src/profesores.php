@@ -16,6 +16,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Profesores</h1>
+    <h1 class="d-flex justify-content-center">Profesores</h1>
 </body>
 </html>

@@ -25,7 +25,6 @@
             <div class="justify-content-center">
                 <label for="correo" class="form-label">Correo electrónico</label>
                 <input type="text" class="form-control" aria-describedby="emailHelp" name="correo" required>
-                
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
