@@ -31,6 +31,9 @@
             <li class="nav-item">
                 <a class="nav-link  <?= $clase == "profesores" ? "active" : " " ?>" href="profesores.php">Profesores</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link  <?= $clase == "alta" ? "active" : " " ?>" href="alta.php">Alta usuario</a>
+            </li>
         </ul>
     </div>
 </body>
