@@ -1,6 +1,6 @@
 <?php
 session_start();
-$clase = "inicio";
+$clase = "alumnos";
 
 if ($_SESSION['correo'] != '1234' || $_SESSION['contraseña'] != '1234') {
     header("Location: login.php");

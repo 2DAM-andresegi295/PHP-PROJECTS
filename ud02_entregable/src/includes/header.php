@@ -20,22 +20,22 @@
 
 <body>
     <header class="d-flex justify-content-center bg-info">
-        <h1 class="titulo"><img src="../src/img/logo-mm.png">Gestión de alumnos</h1>
+        <h1 class="titulo"><img src="../src/img/logo-mm.png">Gestión de <?=$clase?></h1>
     </header>
     <div class="p-4">
         <ul class="nav nav-pills d-flex justify-content-center">
             <li class="nav-item">
-                <a class="nav-link <?= $clase == "inicio" ? "active" : " " ?>" aria-current="page"
+                <a class="nav-link <?= $clase == "alumnos" ? "active" : " " ?>" aria-current="page"
                     href="index.php">Inicio</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link  <?= $clase == "profesores" ? "active" : " " ?>" href="profesores.php">Profesores</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  <?= $clase == "alta" ? "active" : " " ?>" href="alta.php">Alta usuario</a>
+                <a class="nav-link  <?= $clase == "altas" ? "active" : " " ?>" href="alta.php">Alta usuario</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  <?= $clase == "excursiones" ? "active" : " " ?>" href="excursiones.php">Galería</a>
+                <a class="nav-link  <?= $clase == "galería" ? "active" : " " ?>" href="excursiones.php">Galería</a>
             </li>
         </ul>
     </div>

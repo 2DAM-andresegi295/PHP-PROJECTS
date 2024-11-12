@@ -1,6 +1,6 @@
 <?php
 session_start();
-$clase = "excursiones";
+$clase = "galería";
 require 'includes/header.php';
 if ($_SESSION['correo'] == '1234' && $_SESSION['contraseña'] == '1234') {
 
