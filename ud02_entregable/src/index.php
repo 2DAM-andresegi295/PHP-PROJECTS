@@ -72,6 +72,35 @@ $alumnos = array(
             }
         ?>
     </form>
+    <form class="d-flex justify-content-end" action="" method="get">
+        <input type="hidden" name="archivo" value="./files/alumnos.txt">
+        <button class="btn btn-warning" type="submit">Descargar todo</button>
+    </form>
+    <?php
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            if (isset($_GET['archivo'])){
+                $nombre_archivo=$_GET['archivo'];
+                $archivo = fopen($nombre_archivo, "w");
+                if($archivo){
+                    foreach ($alumnos as $clave => $valor) {
+                        $nombre = $valor['nombre'];
+                        $correo = $valor['correo'];
+                        $curso = $valor['curso'];
+                        $linea = "$nombre $correo $curso";
+                        fwrite($archivo, $linea . PHP_EOL);
+                    }
+                    fclose($archivo);
+                }
+                $use=false;
+                $context=null;
+                header('Content-Type: application/octet-stream');
+                header('Content-Disposition: attachment; filename="' . basename($nombre_archivo) . '"');
+
+                readfile($nombre_archivo);
+            }
+            
+        }
+    ?>
 
     <table class="table table-hover">
         <tr class="fw-bold">
