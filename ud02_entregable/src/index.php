@@ -77,7 +77,7 @@ require 'includes/header.php';
 </head>
 <body>
     <h1 class="d-flex justify-content-center">Alumnado</h1>
-    <div class="m-4">
+    <div class="p-4">
         <form method="POST" action="">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nombre del alumno a buscar:</label>

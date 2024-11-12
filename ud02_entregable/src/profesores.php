@@ -50,6 +50,7 @@ if (isset($_POST['ZA'])) {
 
 <body>
     <h1 class="d-flex justify-content-center">Profesorado</h1>
+    
     <div class="d-flex justify-content-center p-3">
         <form method="POST">
             <button type="submit" name="AZ" class="m-1 btn btn-success">Ordenar A->Z</button>

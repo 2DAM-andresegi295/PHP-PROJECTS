@@ -35,7 +35,7 @@ if (isset($_FILES['miArchivo'])) {
 
 <body>
     <h1 class="d-flex justify-content-center">Galería</h1>
-
+    <div class="p-4">
     <form action="" method="POST" class="d-flex justify-content-start" enctype="multipart/form-data">
         <div class="d-flex justify-content-start">
             <input type="file" class="form-control" id="inputGroupFile04" name="miArchivo"
@@ -88,7 +88,7 @@ if (isset($_FILES['miArchivo'])) {
             </div>
         </div>
     </div>
-
+    </div>
 </body>
 
 </html>
