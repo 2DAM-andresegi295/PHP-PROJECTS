@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+    session_start();
+    $login=true;
 
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
+        $_SESSION['correo']=$_POST['correo'];
+        $_SESSION['contraseña']=$_POST['contrasena'];
+        
+    if($_SESSION['correo']== '1234'&& $_SESSION['contraseña']== '1234'){
+        header("Location: index.php");
+    }else{ 
+        $login=false;
+    }
+    }
+    
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,22 +45,12 @@
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input type="text" class="form-control" name="contrasena" required>
             </div>
+            <?= !$login ? '<div class="alert alert-danger d-flex justify-content-center" role="alert">
+                Login incorrecto
+                </div>': " " ?>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>
 </body>
 </html>
 
-<?php
-    session_start();
-
-    if($_SERVER["REQUEST_METHOD"]=="POST"){
-        $_SESSION['correo']=$_POST['correo'];
-        $_SESSION['contraseña']=$_POST['contrasena'];
-        
-    if($_SESSION['correo']== '1234'&& $_SESSION['contraseña']== '1234'){
-        header("Location: index.php");
-    }else{echo 'Credenciales incorrectas';}
-    }
-    
-?>

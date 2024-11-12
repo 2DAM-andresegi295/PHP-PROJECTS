@@ -34,6 +34,9 @@
             <li class="nav-item">
                 <a class="nav-link  <?= $clase == "alta" ? "active" : " " ?>" href="alta.php">Alta usuario</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link  <?= $clase == "excursiones" ? "active" : " " ?>" href="excursiones.php">Galería</a>
+            </li>
         </ul>
     </div>
 </body>
