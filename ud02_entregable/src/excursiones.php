@@ -44,49 +44,51 @@ if (isset($_FILES['miArchivo'])) {
         </div>
     </form>
 
-    <div class="container vh-100 d-flex justify-content-center">
-    <div id="carouselExampleIndicators" class="carousel slide" style="width: 80%;">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <?php
-            $dire = "files_loaded/";
-            $escaner = scandir($dire);
-            $cont = 0;
-            foreach ($escaner as $clave) {
-                if ($clave != "." && $clave != "..") {
-                    $cont = $cont + 1;
-                    $active = "active";
-                    if ($cont != 1) {
-                        $active = "";
-                    }
-                    echo '  <div class="carousel-item ' . $active . '">
-                                <img src=' . $dire . $clave . ' class="d-block w-25 h-25">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-4">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <?php
+                    $dire = "files_loaded/";
+                    $escaner = scandir($dire);
+                    $cont = 0;
+                    foreach ($escaner as $clave) {
+                        if ($clave != "." && $clave != "..") {
+                            $cont = $cont + 1;
+                            $active = "active";
+                            if ($cont != 1) {
+                                $active = "";
+                            }
+                            echo '  <div class="carousel-item ' . $active . '">
+                                <img src=' . $dire . $clave . ' class="d-block vh-100 w-100">
                                 </div>';
-                }
+                        }
 
-            }
-            ?>
-
+                    }
+                    ?>
+                </div>
+                <button class="carousel-control-prev btn btn-primary" type="button"
+                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next btn btn-primary" type="button"
+                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
-        <button class="carousel-control-prev btn btn-primary" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next btn btn-primary" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
-    </div >
+
 </body>
 
 </html>
