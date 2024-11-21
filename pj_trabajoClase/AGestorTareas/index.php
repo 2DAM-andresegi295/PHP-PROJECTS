@@ -2,6 +2,20 @@
 require './includes/data.php';
 require './includes/header.php';
 
+$tareas_toDo=[];
+$tareas_doing=[];
+$tareas_done=[];
+$array_Alltareas=getTareas($db);
+
+foreach($array_Alltareas as $tarea){
+    if($tarea['estado']=='done'){
+        array_push($tareas_done, $tarea);
+    }else if($tarea['estado']=='doing'){
+        array_push($tareas_doing,$tarea);
+    }else{
+        array_push($tareas_toDo,$tarea);
+    }
+}
 ?>
 
 <div class="container my-5">
@@ -13,6 +27,11 @@ require './includes/header.php';
                
             </div>
         </div>
+        <?php
+            foreach ($tareas_toDo as $key) {
+                echo $key['titulo'];
+            }
+        ?>
 
         <!-- Columna de tareas doing -->
           <div class="col-md-4">
