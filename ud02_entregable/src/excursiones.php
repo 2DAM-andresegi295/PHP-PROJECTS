@@ -71,7 +71,6 @@ if (isset($_FILES['miArchivo'])) {
                                 <img src=' . $dire . $clave . ' class="d-block vh-100 w-100">
                                 </div>';
                         }
-
                     }
                     ?>
                 </div>
