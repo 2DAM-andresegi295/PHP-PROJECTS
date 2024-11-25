@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST["logout"])&& isset($_P
     $notFound = false;
     foreach ($array_usuarios as $user) {
         // Verificar credenciales
-        if ($username == $user['email'] && password_verify($password, $user['contraseña'])) {
+        if ($username == $user['nombre'] && password_verify($password, $user['contraseña'])) {
             $_SESSION['username'] = $username;
             $_SESSION['password'] = $password;
             $_SESSION['id_user'] = $user['id'];
