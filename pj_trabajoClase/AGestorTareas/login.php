@@ -11,28 +11,29 @@
 <?php
 session_start();
 require './includes/data.php';
-if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST["logout"])&& isset($_POST["username"])) {
-
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST["logout"]) && isset($_POST["username"])) {
+  
     $array_usuarios = getUsers($db);
     //session_start();
 
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $notFound = false;
-    foreach ($array_usuarios as $user) {
+    $notFound=false;
+    foreach($array_usuarios as $user){
         // Verificar credenciales
-        if ($username == $user['nombre'] && password_verify($password, $user['contraseña'])) {
-            $_SESSION['username'] = $username;
-            $_SESSION['password'] = $password;
-            $_SESSION['id_user'] = $user['id'];
+        
+    if ($username == $user['email'] && password_verify($password, $user['contraseña'])) {
+        $_SESSION['username'] = $username;
+        $_SESSION['password'] = $password;
+        $_SESSION['id_user'] = $user['id'];
 
-            // Redirigir a la página de alumnos matriculados
-            header("Location: index.php");
-            exit();
-        }
+        // Redirigir a la página de alumnos matriculados
+        header("Location: index.php");
+        exit();
     }
-    if (!$notFound) {
+    } 
+    if(!$notFound) {
         // Mostrar mensaje de error
         echo "<div class='alert alert-danger mt-4 text-center' role='alert'>Usuario o contraseña incorrectos</div>";
     }
@@ -43,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST["logout"])&& isset($_P
 
     $_SESSION['username'] = $username;
     $_SESSION['password'] = $password;
-
+    
     session_destroy();
 }
 ?>

@@ -49,6 +49,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nuevaTarea'])) {
     }
 }
 
+
+//ELIMINAR LA TAREA
+if(isset($_POST['btn_eliminar'])){
+    $id_tarea = $_POST['tarea_id'];
+
+    $check_eliminar= eliminarTarea($db, $id_tarea);
+    if($check_eliminar){
+        header('Location: index.php');
+    }
+}
+
 ?>
 
 <div class="container my-5">
@@ -64,10 +75,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nuevaTarea'])) {
             <h2 class="text-center bg-danger text-white p-2 rounded">TO DO</h2>
             <div class="card">
                 <?php foreach ($tareas_toDo as $tarea): ?>
-                    <div class="card border-danger mb-3">
-                        <div class="card-header d-flex align-items-center justify-content-between">
+                    <div class="card border-success mb-3">
+                    <div class="card-header d-flex align-items-center justify-content-between">
                             <span>Entrega: <?= $tarea['fecha_entrega']; ?></span>
-                            <form action="" method="post">
+                            <div class="d-flex align-items-center justify-content-end">
+                            <form action="edit_tarea.php" method="post">
                                 <input type="hidden" name="tarea_id" value="<?= $tarea['id']; ?>">
                                 <button type="submit" class="btn" name="btn_modificar">
                                     <svg
@@ -84,7 +96,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nuevaTarea'])) {
                                         <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
                                         <path d="M16 5l3 3" />
                                     </svg>
-                                </button>
+                                </button>                               
+                            </form>
+                            <form action="" method="post">
+                                <input type="hidden" name="tarea_id" value="<?= $tarea['id']; ?>">
                                 <button type="submit" class="btn" name="btn_eliminar">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2">
                                         <path d="M4 7l16 0"></path>
@@ -93,8 +108,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nuevaTarea'])) {
                                         <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
                                         <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
                                     </svg>
-                                </button>
+                                </button>                         
                             </form>
+                           
+                            </div>
+                         
                         </div>
                         <div class="card-body">
                             <h5 class="card-title"><?= $tarea['titulo']; ?></h5>
@@ -110,10 +128,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nuevaTarea'])) {
             <h2 class="text-center bg-warning text-dark p-2 rounded">DOING</h2>
             <div class="card-columns">
                 <?php foreach ($tareas_doing as $tarea): ?>
-                    <div class="card border-warning mb-3">
+                    <div class="card border-success mb-3">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                            <span>Entrega: <?=$tarea['fecha_entrega']; ?></span>
-                            <form action="" method="post">
+                            <span>Entrega: <?= $tarea['fecha_entrega']; ?></span>
+                            <div class="d-flex align-items-center justify-content-end">
+                            <form action="edit_tarea.php" method="post">
                                 <input type="hidden" name="tarea_id" value="<?= $tarea['id']; ?>">
                                 <button type="submit" class="btn" name="btn_modificar">
                                     <svg
@@ -130,7 +149,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nuevaTarea'])) {
                                         <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
                                         <path d="M16 5l3 3" />
                                     </svg>
-                                </button>
+                                </button>                               
+                            </form>
+                            <form action="" method="post">
+                                <input type="hidden" name="tarea_id" value="<?= $tarea['id']; ?>">
                                 <button type="submit" class="btn" name="btn_eliminar">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2">
                                         <path d="M4 7l16 0"></path>
@@ -139,8 +161,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nuevaTarea'])) {
                                         <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
                                         <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
                                     </svg>
-                                </button>
+                                </button>                         
                             </form>
+                           
+                            </div>
+                         
                         </div>
                         <div class="card-body">
                             <h5 class="card-title"><?= $tarea['titulo']; ?></h5>
@@ -159,7 +184,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nuevaTarea'])) {
                     <div class="card border-success mb-3">
                     <div class="card-header d-flex align-items-center justify-content-between">
                             <span>Entrega: <?= $tarea['fecha_entrega']; ?></span>
-                            <form action="" method="post">
+                            <div class="d-flex align-items-center justify-content-end">
+                            <form action="edit_tarea.php" method="post">
                                 <input type="hidden" name="tarea_id" value="<?= $tarea['id']; ?>">
                                 <button type="submit" class="btn" name="btn_modificar">
                                     <svg
@@ -176,7 +202,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nuevaTarea'])) {
                                         <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
                                         <path d="M16 5l3 3" />
                                     </svg>
-                                </button>
+                                </button>                               
+                            </form>
+                            <form action="" method="post">
+                                <input type="hidden" name="tarea_id" value="<?= $tarea['id']; ?>">
                                 <button type="submit" class="btn" name="btn_eliminar">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2">
                                         <path d="M4 7l16 0"></path>
@@ -185,8 +214,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nuevaTarea'])) {
                                         <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
                                         <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
                                     </svg>
-                                </button>
+                                </button>                         
                             </form>
+                           
+                            </div>
+                         
                         </div>
                         <div class="card-body">
                             <h5 class="card-title"><?= $tarea['titulo']; ?></h5>
@@ -199,7 +231,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nuevaTarea'])) {
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal Nueva tarea-->
 <div class="modal fade" id="newTareaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -215,7 +247,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nuevaTarea'])) {
           </div>
           <div class="mb-3">
             <label for="descripcion" class="form-label">Descripción</label>
-            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" placeholder="Describe la tarea" required></textarea>
+            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" placeholder="Describe la tarea" required>       
+            </textarea>
           </div>
           <div class="mb-3">
             <label for="fecha_entrega" class="form-label">Fecha de Entrega</label>
@@ -235,8 +268,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nuevaTarea'])) {
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
       </div>
         </form>
-      </div>
-     
+      </div>                    
     </div>
   </div>
 </div>
+

@@ -13,54 +13,50 @@
 //REGISTRO DEL USUARIO
 if (isset($_POST["registro"])) {
 
-    //Si le da a registrar incluimos nuestro data.
     require './includes/data.php';
     //Recoger los valores del formulario de registro
     $nombre = isset($_POST["username"]) ? $_POST["username"] : false;
     $email = isset($_POST["email"]) ? $_POST["email"] : false;
     $password = isset($_POST["password"]) ? $_POST["password"] : false;
 
-   
+    //Para almacenar los errores del formulario
+    $errores = [];
+
     //Validar los datos antes de almacenarlos en la base de datos
-     //Para almacenar los errores del formulario
-     $errores = [];
+    //&& !is_numeric($nombre) && !preg_match("/[0-9]/", $nombre)
+    if (!empty($nombre) ) {
+        $nombre_validate = true;
+    } else {
+        $nombre_validate = false;
+        $errores["nombre"] = "El nombre no es correcto";
+    }
 
-     //Validar los datos antes de almacenarlos en la base de datos
-     //&& !is_numeric($nombre) && !preg_match("/[0-9]/", $nombre)
-     if (!empty($nombre) ) {
-         $nombre_validate = true;
-     } else {
-         $nombre_validate = false;
-         $errores["nombre"] = "El nombre no es correcto";
-     }
- 
-     if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-         $email_validate = true;
-     } else {
-         $email_validate = false;
-         $errores["email"] = "El email no es correcto";
-     }
- 
-     if (!empty($password)) {
-         $password_validate = true;
-     } else {
-         $password_validate = false;
-         $errores["password"] = "La contraseña no puede estar vacía.";
-     }
- 
+    if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $email_validate = true;
+    } else {
+        $email_validate = false;
+        $errores["email"] = "El email no es correcto";
+    }
 
-    if (count($errores) == 0) {
-        //INSERTAR USUARIO EN LA TABLA DE USUARIOS DE LA BB
+    if (!empty($password)) {
+        $password_validate = true;
+    } else {
+        $password_validate = false;
+        $errores["password"] = "La contraseña no puede estar vacía.";
+    }
+
+  
+    if (count($errores) == 0) {        
         
-        $check_registro = guardarNuevoUsuario($nombre, $email, $password, $db);       
+        $check_registro = guardarNuevoUsuario($nombre, $email, $password, $db);
+       
         if ($check_registro){
-            header("login.php");
+            header("Location: login.php");
         }
         
     } else {
         echo "<div class='alert alert-danger' role='alert'>Datos de registro incorrecto.</div>";
     }
-    
 }
 ?>
 
