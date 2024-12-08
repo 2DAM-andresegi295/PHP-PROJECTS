@@ -18,16 +18,24 @@
 </head>
 
 <?php
-
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['boton_sesion'])){
+    if ($_SESSION['rol'] != "no") {
+        $_SESSION = array();
+        session_destroy();    
+        header('Location: index.php');
+    }else{
+        header('Location: login.php');
+    }
+}
 ?>
 
 <body>
     <div class="bg-warning-subtle">
-        <form class="d-flex justify-content-end p-2" action="login.php" method="post">
-            <input type='hidden' name='logout' value='salir'>
-            <button type="submit" class="btn btn-dark">Iniciar sesión</button>
-        </form>
+    <form name="boton_sesion" class="d-flex justify-content-end p-2" action="" method="post">
+        <button type="submit" name="boton_sesion" class="btn btn-dark">
+            <?= $_SESSION['rol'] !== "no" ? "Cerrar Sesión" : "Iniciar Sesión" ?>
+        </button>
+    </form>
         <header class="cabecera d-flex align-items-center justify-content-center p-4">
             <img src="./img/logo-biblio.png" class="img-fluid logo me-2" alt="Logo IES">
             <h1 class="titulo">Bienvenido a la Biblioteca Virtual</h1>

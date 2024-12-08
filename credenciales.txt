@@ -1,4 +1,4 @@
 Usuario: root
 Contraseña: usuario
-IP: http://172.22.241.224/php_proyects
+IP: http://172.22.237.173/php-projects
 Directorio: /var/www/html/php_proyects
